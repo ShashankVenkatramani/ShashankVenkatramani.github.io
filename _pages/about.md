@@ -13,8 +13,6 @@ Prev. built Adversarial Attacks for Military Usage | AI Agents for Job Hunting
 
 Prev. worked Autonomous Vehicle Laboratory @ UC San Diego | Amazon | General Atomics
 
-Expertise in Machine Learning, Systems Design, AWS
-
-Can become a novice in just about anything else tech stack related with enough time (except quantum computing... those papers are a hardread...)
+Expertise in Machine Learning, Systems Design, AWS. Love anything that is an API call away.
 
 I love to learn and play with things - if you are building or researching something cool that you want to share, shoot me an email!!
