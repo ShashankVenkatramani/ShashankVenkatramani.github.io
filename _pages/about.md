@@ -9,7 +9,9 @@ redirect_from:
 
 Currently building @ Align Glasses
 
-Prev. at Autonomous Vehicle Laboratory @ UC San Diego, Amazon, General Atomics
+Prev. built Adversarial Attacks for Military Usage | AI Agents for Job Hunting
+
+Prev. worked Autonomous Vehicle Laboratory @ UC San Diego | Amazon | General Atomics
 
 Expertise in Machine Learning, Systems Design, AWS
 
