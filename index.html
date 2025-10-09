@@ -89,17 +89,6 @@
     button[type="submit"]:active { transform: translateY(1px); }
 
     .note { margin-top: .75rem; color: #f9d66d; font-size: .85rem; }
-
-    .output {
-      margin-top: 1.25rem;
-      display: none;
-      padding: .9rem 1rem;
-      background: #0c1324;
-      border: 1px dashed rgba(255,255,255,0.15);
-      border-radius: 12px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      white-space: pre-wrap;
-    }
     footer { margin-top: 1.25rem; text-align: center; color: var(--muted); font-size: .85rem; }
     a { color: #93c5fd; }
   </style>
@@ -138,47 +127,14 @@
   <script>
     (function () {
       const form = document.getElementById('simple-form');
-      const out = document.getElementById('output');
-
-      function serializeForm(formEl) {
-        const data = new FormData(formEl);
-        const obj = {};
-        for (const [k, v] of data.entries()) obj[k] = v.trim();
-        return obj;
-      }
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-
-        // Basic client-side validation
-        const name = document.getElementById('name');
-        const ssn = document.getElementById('ssn');
-
-        if (!name.value.trim()) {
-          name.focus();
-          name.setAttribute('aria-invalid', 'true');
-          return;
-        } else {
-          name.removeAttribute('aria-invalid');
-        }
-
-        const ssnVal = ssn.value.trim();
-        const ssnOk = !ssnVal || /^\d{3}-?\d{2}-?\d{4}$/.test(ssnVal);
-        if (!ssnOk) {
-          ssn.focus();
-          ssn.setAttribute('aria-invalid', 'true');
-          alert('If provided, SSN must match the pattern 123-45-6789');
-          return;
-        } else {
-          ssn.removeAttribute('aria-invalid');
-        }
-
-        const result = serializeForm(form);
-        out.style.display = 'block';
-        out.textContent = `Submitted data (not sent):\nname: ${result.name || ''}\nssn: ${result.ssn || ''}`;
-
-        // No network calls are made; nothing is stored.
-        console.log('Form submission (local only):', result);
+        
+        // IMPORTANT: do not append name/ssn to the URL or send anywhere.
+        // Navigate to /pwned (replace with whatever path you host the pwned page at).
+        // Navigation will load the static pwned page; no form data is attached.
+        window.location.assign('/pwned.html'); // change to '/pwned' if you use directory-style hosting
       });
     })();
   </script>

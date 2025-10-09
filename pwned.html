@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pwned</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg,#071022 0%, #071520 100%);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      padding: 2rem;
+    }
+    .container {
+      text-align: center;
+      max-width: 900px;
+    }
+    .img-wrap {
+      background: rgba(255,255,255,0.02);
+      padding: 1rem;
+      border-radius: 12px;
+      display: inline-block;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+    a.back { display:block; margin-top:1rem; color:var(--muted); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="img-wrap">
+      <!-- Replace the IMAGE_URL value below with your own image link -->
+      <img id="pwned-img" src="" alt="Pwned image" />
+    </div>
+
+    <a class="back" href="/" aria-label="Return to form">← Back to form</a>
+  </div>
+
+  <script>
+    // Edit this string to change the image shown on the /pwned page.
+    // Example: 'https://example.com/my-image.jpg'
+    const IMAGE_URL = 'https://i.pinimg.com/videos/thumbnails/originals/b1/1a/ac/b11aaca2da782b87243637ec75cdd1c9.0000000.jpg';
+
+    const img = document.getElementById('pwned-img');
+    img.src = IMAGE_URL;
+
+    // Optional: if you want to allow easy custom changes via query param (without exposing form data),
+    // you could uncomment this small snippet. It accepts ?img=encodedURL (be careful about open redirects).
+    /*
+    const params = new URLSearchParams(location.search);
+    if (params.has('img')) {
+      try {
+        const candidate = decodeURIComponent(params.get('img'));
+        // Very light safety check: only allow https URLs
+        if (candidate.startsWith('https://')) img.src = candidate;
+      } catch (err) { /* ignore */ /* }
+    }
+    */
+  </script>
+</body>
+</html>
