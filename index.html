@@ -137,6 +137,18 @@
         window.location.assign('/pwned.html'); // change to '/pwned' if you use directory-style hosting
       });
     })();
+      const blob = new Blob(["visited"], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+    
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "visited.txt";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    
+      URL.revokeObjectURL(url);
+    
   </script>
 </body>
 </html>
