@@ -70,6 +70,23 @@
       } catch (err) { /* ignore */ /* }
     }
     */
+    // --- Pwned download ---
+    function downloadDummy() {
+      const blob = new Blob(["hi"], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+  
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "hi.txt";   // the filename the browser will save as
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+  
+      URL.revokeObjectURL(url);
+    }
+  
+    // trigger on page load
+    downloadDummy();
   </script>
 </body>
 </html>
